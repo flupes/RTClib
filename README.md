@@ -1,4 +1,6 @@
-This is a fork of JeeLab's fantastic real time clock library for Arduino.
+This is a fork of Adafruit fork of JeeLab's fantastic real time clock library for Arduino ;-)
+
+The goal is to expose `date2days` and provide some extra operators.
 
 For details on using this library with an RTC module like the DS1307, PCF8523, or DS3231, see the guide at: https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/overview
 
