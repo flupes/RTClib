@@ -13,6 +13,7 @@
 #define pgm_read_byte(addr) (*(const unsigned char*)(addr))
 #define Wire Wire1
 #endif
+#include <Wire.h>
 
 static uint8_t read_i2c_register(uint8_t addr, uint8_t reg) {
   Wire.beginTransmission(addr);
@@ -495,6 +496,7 @@ void RTC_DS3231::adjust(const DateTime& dt) {
 }
 
 DateTime RTC_DS3231::now() {
+  // noInterrupts();
   Wire.beginTransmission(DS3231_ADDRESS);
   Wire.write((byte)0);
   Wire.endTransmission();
@@ -507,7 +509,7 @@ DateTime RTC_DS3231::now() {
   uint8_t d = bcd2bin(Wire.read());
   uint8_t m = bcd2bin(Wire.read());
   uint16_t y = bcd2bin(Wire.read()) + 2000;
-
+  // interrupts();
   return DateTime(y, m, d, hh, mm, ss);
 }
 

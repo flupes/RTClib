@@ -5,9 +5,6 @@
 #define _RTCLIB_H_
 
 #include <Arduino.h>
-// stupid platform IO does not search in the right path
-// when Wire is in the .cpp ?!? (no need in the .h)
-#include <Wire.h>
 
 class TimeSpan;
 
