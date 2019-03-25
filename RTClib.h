@@ -25,6 +25,9 @@ class TimeSpan;
 #define SECONDS_FROM_1970_TO_2000 946684800
 
 // Simple general-purpose date/time class (no TZ / DST / leap second handling!)
+// The class has been extended with a time zone member variable (tzo). However
+// tzo is just kept together with the object but does not affect the internal 
+// time computations. Only `getLocalTime` use tzo to return a new DateTime.
 class DateTime {
  public:
   DateTime(uint32_t t = 0, int8_t time_zone_offset = 0);
