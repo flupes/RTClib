@@ -2,6 +2,9 @@
   Set the time of a DS3131
 */
 
+// Build with:
+// pio ci .\examples\SetTime --board=zeroUSB -l . -O "targets=upload"
+
 // Get the board definitions...
 #include <Arduino.h>
 
